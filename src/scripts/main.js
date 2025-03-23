@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // api call: https://ipwhois.app/json/172.64.155.133
     const data = {
         "ip": "172.64.155.133",
         "success": true,
