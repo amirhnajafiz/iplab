@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
     currency_plural: "US dollars",
   };
 
+  let map;
+
   function updatePage(data) {
     const infoDiv = document.getElementById("info");
     infoDiv.innerHTML = `
@@ -43,7 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="info-item"><i class="fas fa-hashtag"></i> <strong>AS Number:</strong> ${data.asn}</div>
     `;
 
-    const map = L.map("map").setView([data.latitude, data.longitude], 5);
+    if (map) {
+      map.remove();
+    }
+
+    map = L.map("map").setView([data.latitude, data.longitude], 5);
     L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
