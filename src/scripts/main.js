@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <tr><th>City</th><td>${data.city}</td></tr>
       <tr><th>ISP</th><td>${data.isp}</td></tr>
       <tr><th>Organization</th><td>${data.org}</td></tr>
+      <tr><th>AS Number</th><td>${data.asn}</td></tr>
     </table>
     `;
 

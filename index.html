@@ -10,13 +10,19 @@
     <title>IPLAB</title>
   </head>
   <body>
-    <div class="container">
-      <h1>
-        <i class="fa-solid fa-laptop-code x-mr-2"></i>IP Lab
+    <div class="x-container">
+      <h1 class="main-header x-text-center">
+        <i class="fa-solid fa-laptop-code x-mr-2"></i>IPLab
       </h1>
-      <div>
-        <div id="info"></div>
-        <div id="map" style="height: 400px"></div>
+      <div class="main-content">
+        <div class="ip-searchbox">
+          <div>
+            <input type="text" id="ip-input" placeholder="Enter an IP address" />
+            <button id="search-btn">Search</button>
+            <div id="info"></div>
+          </div>
+          <div id="map"></div>
+        </div>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>

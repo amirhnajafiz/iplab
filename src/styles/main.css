@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 
-:root {
-  --primary-color: #57b3dd;
-  --secondary-color: #f2f2f2;
-  --text-color: #ffffff;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -22,45 +16,55 @@ body {
   background-size: cover;
 }
 
-.container {
-  color: var(--text-color);
+.main-header {
+  background-color: #ffffffbf;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 10px 0;
+}
+
+.main-content {
+  background-color: #ffffff6d;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.ip-searchbox {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+#info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
 }
 
 .info-table {
-  width: 90%;
-  height: 400px;
   border-collapse: collapse;
-  margin: 0 auto;
 }
 
 .info-table th,
 .info-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
+  text-align: left;
+  padding: 6px;
 }
 
 .info-table th {
-  background-color: #f2f2f2;
+  background-color: #00087662;
 }
 
 .info-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-.info-table tr:nth-child(odd) {
-  background-color: #ddff6c;
+  background-color: #71717162;
 }
 
 .info-table tr:hover {
-  background-color: #f1f1f1;
+  background-color: #ddd;
 }
 
-.info-table th {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-}
-
-.info-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+#map {
+  height: 400px;
+  width: 100%;
+  border-bottom-right-radius: 8px;
 }

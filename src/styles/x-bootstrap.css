@@ -1,3 +1,13 @@
+.x-container {
+  color: var(--text-color);
+  margin: 80px auto;
+  width: 70%;
+}
+
+.x-text-center {
+  text-align: center;
+}
+
 .x-mr-2 {
   margin-right: 0.5rem;
 }
