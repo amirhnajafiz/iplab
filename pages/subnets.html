@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/styles/main.css" />
+    <link rel="stylesheet" href="../src/styles/x-bootstrap.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>IPLAB</title>
+  </head>
+  <body>
+    <div class="x-container">
+      <h1 class="main-header x-text-center">
+        <i class="fa-solid fa-laptop-code x-mr-2"></i>IPLab
+      </h1>
+      <a href="/" class="link-btn">
+        Home
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <div class="main-content" style="padding: 50px;">
+        <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+          <input type="text" id="ip-input" placeholder="Enter an network address X.X.X.X/X" />
+          <span id="search-btn" class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+        </div>
+        <div id="info" style="padding: 50px;"></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="../src/scripts/subnets.js"></script>
+  </body>
+</html>
