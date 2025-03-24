@@ -3,7 +3,7 @@
 :root {
   --primary-color: #57b3dd;
   --secondary-color: #f2f2f2;
-  --text-color: #333;
+  --text-color: #ffffff;
 }
 
 * {
@@ -20,6 +20,10 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container {
+  color: var(--text-color);
 }
 
 .info-table {
