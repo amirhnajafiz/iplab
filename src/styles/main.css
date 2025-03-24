@@ -14,6 +14,14 @@
   text-decoration: none;
 }
 
+body {
+  background-image: url("../../images/bg.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .info-table {
   width: 90%;
   height: 400px;
@@ -34,6 +42,9 @@
 
 .info-table tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+.info-table tr:nth-child(odd) {
+  background-color: #ddff6c;
 }
 
 .info-table tr:hover {
