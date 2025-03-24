@@ -74,6 +74,21 @@ body {
   margin: 40px 5px;
 }
 
+.link-btn {
+  position: fixed;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #ffffff6d;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: black;
+}
+
+.link-btn:hover {
+  background-color: #ffffff8c;
+}
+
 #info {
   width: 67%;
   margin: auto;
