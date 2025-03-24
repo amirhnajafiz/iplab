@@ -70,37 +70,17 @@ body {
   background-color: #ffffff8c;
 }
 
+.info-box {
+  margin: 40px 5px;
+}
+
 #info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
+  width: 67%;
+  margin: auto;
 }
 
-.info-table {
-  border-collapse: collapse;
-}
-
-.info-table th,
-.info-table td {
-  text-align: left;
-  padding: 6px;
-}
-
-.info-table th {
-  background-color: #00087662;
-}
-
-.info-table tr:nth-child(even) {
-  background-color: #71717162;
-}
-
-.info-table tr:nth-child(odd) {
-  background-color: #ffffff8c;
-}
-
-.info-table tr:hover {
-  background-color: #ddd;
+#info div {
+  margin: 15px;
 }
 
 #map {

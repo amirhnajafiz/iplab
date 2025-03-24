@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // api call: https://ipwhois.app/json/172.64.155.133
-  const data = {
+  const defaultData = {
     ip: "172.64.155.133",
     success: true,
     type: "IPv4",
@@ -31,27 +30,47 @@ document.addEventListener("DOMContentLoaded", function () {
     currency_plural: "US dollars",
   };
 
-  const infoDiv = document.getElementById("info");
-  infoDiv.innerHTML = `
-    <table class="info-table">
-      <tr><th>IP</th><td>${data.ip}</td></tr>
-      <tr><th>Type</th><td>${data.type}</td></tr>
-      <tr><th>Country</th><td>${data.country} <img src="${data.country_flag}" alt="Flag" width="20"/></td></tr>
-      <tr><th>Region</th><td>${data.region}</td></tr>
-      <tr><th>City</th><td>${data.city}</td></tr>
-      <tr><th>ISP</th><td>${data.isp}</td></tr>
-      <tr><th>Organization</th><td>${data.org}</td></tr>
-      <tr><th>AS Number</th><td>${data.asn}</td></tr>
-    </table>
+  function updatePage(data) {
+    const infoDiv = document.getElementById("info");
+    infoDiv.innerHTML = `
+      <div class="info-item"><i class="fas fa-network-wired"></i> <strong>IP:</strong> ${data.ip}</div>
+      <div class="info-item"><i class="fas fa-server"></i> <strong>Type:</strong> ${data.type}</div>
+      <div class="info-item"><i class="fas fa-flag"></i> <strong>Country:</strong> ${data.country} <img src="${data.country_flag}" alt="Flag" width="20"/></div>
+      <div class="info-item"><i class="fas fa-map-marker-alt"></i> <strong>Region:</strong> ${data.region}</div>
+      <div class="info-item"><i class="fas fa-city"></i> <strong>City:</strong> ${data.city}</div>
+      <div class="info-item"><i class="fas fa-wifi"></i> <strong>ISP:</strong> ${data.isp}</div>
+      <div class="info-item"><i class="fas fa-building"></i> <strong>Organization:</strong> ${data.org}</div>
+      <div class="info-item"><i class="fas fa-hashtag"></i> <strong>AS Number:</strong> ${data.asn}</div>
     `;
 
-  const map = L.map("map").setView([data.latitude, data.longitude], 5);
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-  }).addTo(map);
-  L.marker([data.latitude, data.longitude])
-    .addTo(map)
-    .bindPopup(`<b>${data.city}</b><br>${data.region}, ${data.country}`)
-    .openPopup();
+    const map = L.map("map").setView([data.latitude, data.longitude], 5);
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    }).addTo(map);
+    L.marker([data.latitude, data.longitude])
+      .addTo(map)
+      .bindPopup(`<b>${data.city}</b><br>${data.region}, ${data.country}`)
+      .openPopup();
+  }
+
+  updatePage(defaultData);
+
+  document.getElementById("search-btn").addEventListener("click", function () {
+    const ip = document.getElementById("ip-input").value;
+    fetch(`https://ipwhois.app/json/${ip}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        if (data.success) {
+          updatePage(data);
+        } else {
+          alert(`Failed to retrieve data: ${data.message}`);
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+        alert("An error occurred while fetching data. Please try again later.");
+      });
+  });
 });
