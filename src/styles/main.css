@@ -34,6 +34,42 @@ body {
   grid-template-columns: 50% 50%;
 }
 
+.searchbox {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ip-input {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  background-color: #ffffff8c;
+}
+
+#ip-input:focus {
+  outline: none;
+  background-color: #ffffffbf;
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #ffffff6d;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #ffffff8c;
+}
+
 #info {
   display: flex;
   justify-content: center;
@@ -59,12 +95,16 @@ body {
   background-color: #71717162;
 }
 
+.info-table tr:nth-child(odd) {
+  background-color: #ffffff8c;
+}
+
 .info-table tr:hover {
   background-color: #ddd;
 }
 
 #map {
-  height: 400px;
+  height: 450px;
   width: 100%;
   border-bottom-right-radius: 8px;
 }
